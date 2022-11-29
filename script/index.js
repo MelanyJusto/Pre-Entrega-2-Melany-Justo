@@ -98,6 +98,7 @@ function busqueda() {
     let buscador;
     let idEncontrado;
     let filtrarCuotas;
+    let eliminarPrestamo;
     switch (filtrado) {
         case 1:
             filtrar = 'Buscar prestamo'
@@ -110,11 +111,13 @@ function busqueda() {
             buscador = parseInt(prompt('Ingresa 3, 6 o 12 cuotas'));
             filtrarCuotas = listaDePrestamos.filter((prestamo) => prestamo.cuotas == buscador);
             console.log(filtrarCuotas);
-            break
+            break;
 
         case 3:
             filtrar = 'Eliminar prestamo'
-
+            eliminarPrestamo = listaDePrestamos.pop();
+            console.log(listaDePrestamos);
+            break;
         default:
             busqueda();
     }
